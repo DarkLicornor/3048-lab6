@@ -1,6 +1,6 @@
 <?php
-include('db_connect.php')
-;
+include('db_connect.php');
+
 // Start XML file, create parent node
 $dom = new DOMDocument("1.0");
 $node = $dom->createElement("markers");

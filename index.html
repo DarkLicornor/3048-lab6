@@ -40,16 +40,16 @@
 }
 
 	const downloadUrl = (url, callback) => {
-	const request = window.ActiveXObject
-	   ? new ActiveXObject('Microsoft.XMLHTTP')
-	   : new XMLHttpRequest;
-	request.onreadystatechange = () => {
-	  if (request.readyState == 4) {
-	    callback(request, request.status)
-	  }
-	}
-	request.open('GET', url, true)
-	  request.send(null)
+		const request = window.ActiveXObject
+		   ? new ActiveXObject('Microsoft.XMLHTTP')
+		   : new XMLHttpRequest
+		request.onreadystatechange = () => {
+		  if (request.readyState == 4) {
+		    callback(request, request.status)
+		  }
+		}
+		request.open('GET', url, true)
+		  request.send(null)
 	}
 
 	</script>
