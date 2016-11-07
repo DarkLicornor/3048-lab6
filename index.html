@@ -21,7 +21,7 @@
 	    center: new google.maps.LatLng(47.6145, -122.3418),
 	    zoom: 13,
 	    mapTypeId: 'roadmap',
-			downloadUrl("locations.php", (data) => {
+			downloadUrl('locations.php', (data) => {
 				let xml = data.responseXML
 				let markers = xml.documentElement.getElementsByTagName("marker");
 				for (let i = 0; i < markers.length; i++) {
