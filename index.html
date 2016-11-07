@@ -6,7 +6,8 @@
 	          type="text/JavaScript"></script>
 	</head>
 	<script type="text/JavaScript">
-	const customIcons = {
+
+	let customIcons = {
 	  restaurant: {
 	    icon: 'http://labs.google.com/ridefinder/images/mm_20_blue.png'
 	  },
@@ -15,7 +16,7 @@
 	  }
 	}
 
-	const load = () => {
+	let load = () => {
 	let map = new google.maps.Map(document.getElementById("map"), {
     center: new google.maps.LatLng(47.6145, -122.3418),
     zoom: 13,
