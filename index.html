@@ -17,28 +17,28 @@
 	}
 
 	let load = () => {
-	let map = new google.maps.Map(document.getElementById("map"), {
-    center: new google.maps.LatLng(47.6145, -122.3418),
-    zoom: 13,
-    mapTypeId: 'roadmap'
-		downloadUrl("locations.php", (data) => {
-			let xml = data.responseXML
-			let markers = xml.documentElement.getElementsByTagName("marker");
-			for (let i = 0; i < markers.length; i++) {
-				let point = new google.maps.LatLng(
-					parseFloat(markers[i].getAttribute("lat")),
-					parseFloat(markers[i].getAttribute("lng")))
-				let type = markers[i].getAttribute("type")
-				let icon = customIcons[type] || {}
-				let marker = new google.maps.Marker({
-					map: map,
-					position: point,
-					icon: icon.icon
-				})
-			}
+		let map = new google.maps.Map(document.getElementById("map"), {
+	    center: new google.maps.LatLng(47.6145, -122.3418),
+	    zoom: 13,
+	    mapTypeId: 'roadmap',
+			downloadUrl("locations.php", (data) => {
+				let xml = data.responseXML
+				let markers = xml.documentElement.getElementsByTagName("marker");
+				for (let i = 0; i < markers.length; i++) {
+					let point = new google.maps.LatLng(
+						parseFloat(markers[i].getAttribute("lat")),
+						parseFloat(markers[i].getAttribute("lng")))
+					let type = markers[i].getAttribute("type")
+					let icon = customIcons[type] || {}
+					let marker = new google.maps.Marker({
+						map: map,
+						position: point,
+						icon: icon.icon
+					})
+				}
+			})
 		})
-	})
-}
+	}
 
 	const downloadUrl = (url, callback) => {
 		const request = window.ActiveXObject
